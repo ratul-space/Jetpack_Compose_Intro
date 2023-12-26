@@ -16,7 +16,7 @@ fun ContentTitle() {
     val context = LocalContext.current
     Text(
         text = "test",
-        fontSize = 32.sp,
+        fontSize = 88.sp,
         fontFamily = FontFamily.Cursive,
         color = Color.Green,
         fontWeight = FontWeight.Bold,
