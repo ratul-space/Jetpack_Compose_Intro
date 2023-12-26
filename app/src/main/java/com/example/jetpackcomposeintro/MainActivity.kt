@@ -18,36 +18,21 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.example.jetpackcomposeintro.content.ContentTitle
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Title()
+            ContentTitle()
         }
     }
-}
-
-@Composable
-fun Title() {
-    val context = LocalContext.current
-
-    Text(
-        text = "test",
-        fontSize = 32.sp,
-        fontFamily = FontFamily.Cursive,
-        color = Color.Companion.Green,
-        fontWeight = Bold,
-        modifier = Modifier.clickable {
-            Toast.makeText(context, "test clicked!", Toast.LENGTH_LONG).show()
-        }
-    )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     Surface(modifier = Modifier.fillMaxSize()) {
-        Title()
+        ContentTitle()
     }
 }
