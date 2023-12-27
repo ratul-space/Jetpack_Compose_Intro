@@ -54,7 +54,7 @@ fun UserCard() {
                 .clip(CircleShape)
         )
         Column {
-            Text(text = stringResource(id = R.string.app_name))
+            Text(text = stringResource(id = R.string.user_name))
             Button(onClick = {
                 Toast.makeText(context, "Your life is in good", Toast.LENGTH_LONG).show()
 
