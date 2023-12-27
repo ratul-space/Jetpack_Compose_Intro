@@ -6,12 +6,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.ColorRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.magnifier
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -36,6 +43,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 //            ContentTitle()
+            UserList()
+        }
+    }
+}
+
+@Composable
+fun UserList() {
+    Column(
+        modifier = Modifier.verticalScroll(rememberScrollState())
+    ) {
+
+        for (i in 1..20) {
             UserCard()
         }
     }
@@ -44,7 +63,15 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun UserCard() {
     val context = LocalContext.current
-    Row {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+            .padding(12.dp)
+            .border(width = 1.dp, color = Color.LightGray)
+            .padding(12.dp)
+
+    ) {
         Image(
             painter = painterResource(id = R.drawable.ic_launcher_background),
             contentDescription = "",
