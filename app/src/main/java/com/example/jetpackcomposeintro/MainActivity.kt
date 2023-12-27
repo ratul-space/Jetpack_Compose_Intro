@@ -105,10 +105,8 @@ fun UserList(users: List<User>) {
 //        }
 //    }
     LazyColumn {
-        items(users) {
-            this@LazyColumn.items(users) { user ->
-                UserCard()
-            }
+        items(users) { user ->
+            UserCard()
         }
     }
 }
