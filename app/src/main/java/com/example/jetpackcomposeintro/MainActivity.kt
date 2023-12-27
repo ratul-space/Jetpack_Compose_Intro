@@ -49,8 +49,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MainContent()
-//            ContentTitle()
-//            UserList()
         }
     }
 }
@@ -63,7 +61,6 @@ data class User(
 fun MainContent() {
     val user = User(1)
     val users = remember { mutableStateListOf(user) }
-
 
     Box(modifier = Modifier.fillMaxSize()) {
         UserList(users = users)
@@ -80,30 +77,8 @@ fun MainContent() {
     }
 }
 
-//val users = mutableListOf(
-//    User(1),
-//    User(1),
-//    User(1),
-//    User(1),
-//    User(1),
-//    User(1),
-//    User(1),
-//    User(1),
-//
-//)
 @Composable
 fun UserList(users: List<User>) {
-//    val name = remember { mutableStateOf("Ratul") }
-
-
-//    Column(
-//        modifier = Modifier.verticalScroll(rememberScrollState())
-//    ) {
-//
-//        for (i in 1..20) {
-//            UserCard()
-//        }
-//    }
     LazyColumn {
         items(users) { user ->
             UserCard()
@@ -147,8 +122,6 @@ fun UserCard() {
 @Composable
 fun DefaultPreview() {
     Surface(modifier = Modifier.fillMaxSize()) {
-//        ContentTitle()
         MainContent()
-//        UserCard()
     }
 }
