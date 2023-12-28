@@ -47,9 +47,9 @@ import com.example.jetpackcomposeintro.content.ContentTitle
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            MainContent()
-        }
+        setContentView(R.layout.activity_legacy)
+
+
     }
 }
 
