@@ -1,6 +1,8 @@
 package com.example.jetpackcomposeintro
 
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -42,17 +44,35 @@ import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import com.example.jetpackcomposeintro.content.ContentTitle
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_legacy)
-
-
+        setContent {
+//            MainActivity()
+            ComposeWithXML()
+        }
     }
 }
 
+@Composable
+fun ComposeWithXML(){
+    AndroidView(
+        factory = {
+            View.inflate(it, R.layout.layout1, null)
+        },
+        modifier = Modifier.fillMaxSize(),
+        update = {
+            val textView = it.findViewById<TextView>(R.id.text_view)
+          textView.setOnClickListener {
+                textView.text = "View Text Updated"
+            }
+        }
+
+    )
+}
 data class User(
     val id: Int
 )
@@ -122,6 +142,7 @@ fun UserCard() {
 @Composable
 fun DefaultPreview() {
     Surface(modifier = Modifier.fillMaxSize()) {
-        MainContent()
+//        MainContent()
+        ComposeWithXML()
     }
 }
