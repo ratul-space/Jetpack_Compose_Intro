@@ -51,14 +51,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-//            MainActivity()
             ComposeWithXML()
         }
     }
 }
 
 @Composable
-fun ComposeWithXML(){
+fun ComposeWithXML() {
     AndroidView(
         factory = {
             View.inflate(it, R.layout.layout1, null)
@@ -66,13 +65,14 @@ fun ComposeWithXML(){
         modifier = Modifier.fillMaxSize(),
         update = {
             val textView = it.findViewById<TextView>(R.id.text_view)
-          textView.setOnClickListener {
-                textView.text = "View Text Updated"
+            textView.setOnClickListener {
+                textView.text = "Updated TextView"
             }
         }
 
     )
 }
+
 data class User(
     val id: Int
 )
