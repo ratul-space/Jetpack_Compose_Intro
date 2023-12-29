@@ -20,7 +20,6 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun Home(navController: NavHostController) {
-    val context = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()
