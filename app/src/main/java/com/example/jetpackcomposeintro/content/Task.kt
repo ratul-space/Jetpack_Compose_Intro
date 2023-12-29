@@ -1,4 +1,4 @@
-package com.example.jetpackcomposeintro
+package com.example.jetpackcomposeintro.content
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable

@@ -1,4 +1,4 @@
-package com.example.jetpackcomposeintro.ui.theme
+package com.example.jetpackcomposeintro.content
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
@@ -8,8 +8,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.jetpackcomposeintro.Home
-import com.example.jetpackcomposeintro.Task
 
 @Composable
 fun MainContent() {

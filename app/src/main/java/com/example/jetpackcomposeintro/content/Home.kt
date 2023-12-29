@@ -1,4 +1,4 @@
-package com.example.jetpackcomposeintro
+package com.example.jetpackcomposeintro.content
 
 import android.widget.Toast
 import androidx.compose.foundation.background
