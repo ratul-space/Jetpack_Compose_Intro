@@ -4,4 +4,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="txt_blank_fragment">Blank fragment</string>
     <string name="txt_i_am_xml_part">I am XML Part</string>
+    <string name="updated_textview">Updated TextView</string>
 </resources>

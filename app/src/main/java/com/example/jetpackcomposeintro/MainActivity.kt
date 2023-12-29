@@ -57,10 +57,9 @@ fun ComposeWithXML() {
         update = {
             val textView = it.findViewById<TextView>(R.id.text_view)
             textView.setOnClickListener {
-                textView.text = "Updated TextView"
+                textView.setText(R.string.updated_textview)
             }
         }
-
     )
 }
 
