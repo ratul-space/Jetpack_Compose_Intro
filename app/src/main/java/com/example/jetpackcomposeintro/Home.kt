@@ -25,21 +25,23 @@ fun Home(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Black),
+            .background(Color.Cyan),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
+    ) {
         Button(
             onClick = {
-                Toast.makeText(context, "Button Clicked", Toast.LENGTH_LONG).show()
+//                Toast.makeText(context, "Button Clicked", Toast.LENGTH_LONG).show()
+                navController.navigate("task")
             },
             shape = CircleShape,
             modifier = Modifier.size(200.dp),
             colors = ButtonDefaults.buttonColors(Color.Green),
-            ) {
+        ) {
             Text(
                 text = "Chocolate",
-                fontSize = 20.sp
+                fontSize = 30.sp,
+                color = Color.Red
             )
         }
     }
