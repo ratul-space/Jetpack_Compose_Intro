@@ -1,44 +1,46 @@
 package com.example.jetpackcomposeintro
 
-import android.widget.TextView
+import android.widget.Toast
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 @Composable
 fun Home(navController: NavHostController) {
-
+    val context = LocalContext.current
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Black),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-        Text(
-            text = "Home",
-            color = Color.Cyan,
-            fontSize = 99.sp,
-            textAlign = TextAlign.Center,
-            overflow = TextOverflow.Visible,
-            fontWeight = FontWeight.Bold
-//            fontFamily = FontFamily.Cursive,
-//            fontStyle = FontStyle.Italic
-
-
-        )
-
+        horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+        Button(
+            onClick = {
+                Toast.makeText(context, "Button Clicked", Toast.LENGTH_LONG).show()
+            },
+            shape = CircleShape,
+            modifier = Modifier.size(200.dp),
+            colors = ButtonDefaults.buttonColors(Color.Green),
+            ) {
+            Text(
+                text = "Chocolate",
+                fontSize = 20.sp
+            )
+        }
     }
 }
