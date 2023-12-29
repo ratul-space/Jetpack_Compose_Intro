@@ -68,26 +68,6 @@ data class User(
 )
 
 @Composable
-fun MainActivityContent() {
-    val user = User(1)
-    val users = remember { mutableStateListOf(user) }
-
-    Box(modifier = Modifier.fillMaxSize()) {
-        UserList(users = users)
-        Button(modifier =
-        Modifier
-            .padding(24.dp)
-            .align(Alignment.BottomCenter),
-            onClick = {
-                users.add(User(1))
-
-            }) {
-            Text(text = "Add More")
-        }
-    }
-}
-
-@Composable
 fun UserList(users: List<User>) {
     LazyColumn {
         items(users) { user ->
